@@ -1,3 +1,4 @@
+<div>
 <label for="userId">User Id:</label>
 <input type="text" id = "userId" placeholder="Nome Utente" [(ngModel)] = userId>
 
@@ -6,8 +7,7 @@
 
 <button (click)= gestAuth()> Connetti</button>
 
-<br>
-
-<p>
-  Il tuo  userId è {{userId}} e la tua password è {{password}}
-</p>
+</div>
+<div *ngIf="!autenticato">
+{{errMsg}}
+</div>

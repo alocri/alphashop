@@ -10,6 +10,9 @@ export class LoginComponent implements OnInit {
   userId: string = "Nicola";
   password: string = "";
 
+  autenticato: boolean = true;
+  errMsg: string = "Spiacente, la userid e/o la password sono errati!"
+
   constructor() { }
 
   ngOnInit(): void {
@@ -17,6 +20,13 @@ export class LoginComponent implements OnInit {
 
 gestAuth =(): void => {
   console.log(this.userId);
+
+  if(this.userId === "Nicola" && this.password === "123_stella"){
+    this.autenticato == true;
+  }
+  else{
+    this.autenticato = false;
+  }
 }
 
 }
