@@ -11,8 +11,9 @@ export class LoginComponent implements OnInit {
   password: string = "";
 
   autenticato: boolean = true;
+  consentito: boolean = false;
   errMsg: string = "Spiacente, la userid e/o la password sono errati!"
-
+  okMsg: string = "accesso consentito";
   constructor() { }
 
   ngOnInit(): void {
@@ -22,10 +23,12 @@ gestAuth =(): void => {
   console.log(this.userId);
 
   if(this.userId === "Nicola" && this.password === "123_stella"){
-    this.autenticato == true;
+    this.autenticato = true;
+    this.consentito = true;
   }
   else{
     this.autenticato = false;
+    this.consentito = false;
   }
 }
 
