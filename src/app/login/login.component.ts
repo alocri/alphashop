@@ -12,8 +12,9 @@ export class LoginComponent implements OnInit {
   password: string = "";
 
   autenticato: boolean = true;
+
   errMsg: string = "Spiacente, la userid e/o la password sono errati!"
-  okMsg: string = "accesso consentito";
+
 
   constructor(private route: Router) { }
 
@@ -24,7 +25,7 @@ gestAuth =(): void => {
   console.log(this.userId);
 
   if(this.userId === "Nicola" && this.password === "123_stella"){
-    this.route.navigate(['welcome']);
+    this.route.navigate(['welcome', this.userId]);
     this.autenticato = true;
   }
   else{
